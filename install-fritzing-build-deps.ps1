@@ -39,6 +39,12 @@ function Install-Qt {
 }
 
 function Install-DesktopAppInstaller {
+    Invoke-WebRequest -Uri https://globalcdn.nuget.org/packages/microsoft.ui.xaml.2.8.6.nupkg -OutFile microsoft.ui.xaml.zip
+    Expand-Archive -Path microsoft.ui.xaml.zip -DestinationPath microsoft.ui.xaml
+    Add-AppxPackage .\microsoft.ui.xaml\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx
+    Remove-Item -Path microsoft.ui.xaml.zip -Force
+    Remove-Item -Path microsoft.ui.xaml -Recurse -Force
+
     Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/download/v1.7.11261/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile Microsoft.DesktopAppInstaller.msixbundle
     Add-AppxPackage .\Microsoft.DesktopAppInstaller.msixbundle
 }
