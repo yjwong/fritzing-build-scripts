@@ -25,7 +25,7 @@ function Install-Qt {
         '--accept-obligations'
         '--confirm-command'
         '--auto-answer'
-        'telemetry-question=No,AssociateCommonFiletypes=No'
+        'telemetry-question=No,AssociateCommonFiletypes=No,installationErrorWithCancel=Ignore'
         'install'
         'qt.qt6.653.win64_msvc2019_64'
         'qt.qt6.653.src'
