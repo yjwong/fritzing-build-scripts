@@ -85,7 +85,7 @@ try {
 Write-Output "Building PolyClipper..."
 Push-Location -Path clipper_ver6.4.2/cpp
 try {
-    $polyClipperInstallPrefix = ((Join-Path -Path (Split-Path -Parent (Split-Path -Parent (Get-Location))) -ChildPath clipper1/6.4.2) -replace '\\', '/')
+    $polyClipperInstallPrefix = ((Join-Path -Path (Split-Path -Parent (Split-Path -Parent (Get-Location))) -ChildPath Clipper1-6.4.2) -replace '\\', '/')
 
     Write-Output "Building PolyClipper (shared)..."
     & "cmake.exe" -B build "-DCMAKE_INSTALL_PREFIX=$polyClipperInstallPrefix"
