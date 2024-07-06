@@ -3,7 +3,7 @@ $qtVersion = '6.5.3'
 $boostVersion = '1.81.0'
 $libgit2Version = '1.7.1'
 $svgppVersion = '1.3.0'
-$ngspiceVersion = '40'
+$ngspiceVersion = '42'
 $quazipVersion = '1.4'
 $zlibVersion = '1.3.1'
 
@@ -40,7 +40,7 @@ Invoke-WebRequest -Uri https://github.com/svgpp/svgpp/archive/refs/tags/v$svgppV
 Remove-Item -Path svgpp.zip
 
 Write-Output "Downloading ngspice..."
-Invoke-WebRequest -Uri https://jaist.dl.sourceforge.net/project/ngspice/ng-spice-rework/old-releases/40/ngspice-40.tar.gz?viasf=1 -OutFile ngspice.tar.gz
+Invoke-WebRequest -Uri https://jaist.dl.sourceforge.net/project/ngspice/ng-spice-rework/$ngspiceVersion/ngspice-$ngspiceVersion.tar.gz?viasf=1 -OutFile ngspice.tar.gz
 & "C:\Program Files\7-Zip\7z.exe" x ngspice.tar.gz
 & "C:\Program Files\7-Zip\7z.exe" x ngspice.tar
 Remove-Item -Path ngspice.tar
